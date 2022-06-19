@@ -14,10 +14,11 @@ export default {
 
 <style>
 .console {
+  font-size : 1.19em;
   background-color: black;
   border-radius: 4px;
   padding: 20px;
-  margin-top: 70.365vh;
+  margin-top: 62.9vh;
   margin-left: 0px;
 }
 </style>
