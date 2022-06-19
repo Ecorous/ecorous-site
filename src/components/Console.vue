@@ -3,16 +3,13 @@ export default {
   data() {
     return {
       greeting: "Hello World!",
-      commands: ["help", "clear", "exit"],
     };
   },
 };
 </script>
 
 <template>
-  <div class="console">
-    
-  </div>
+  <div class="console"></div>
 </template>
 
 <style>
@@ -20,6 +17,7 @@ export default {
   background-color: black;
   border-radius: 4px;
   padding: 20px;
-  margin-top: 90.665vh;
+  margin-top: 70.365vh;
+  margin-left: 0px;
 }
 </style>

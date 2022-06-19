@@ -1,5 +1,6 @@
 ---
 import Console from '../components/Console.vue';
+import MainHeader from '../components/MainHeader.vue';
 ---
 
 <html lang="en">
@@ -8,7 +9,7 @@ import Console from '../components/Console.vue';
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Astro</title>
+	<title>Ecorous/Home</title>
 </head>
 
 <body>
@@ -21,6 +22,7 @@ import Console from '../components/Console.vue';
 
 		* {
 			color: white;
+			font-family: monospace;
 		}
 	</style>
 	<style is:global>
@@ -28,46 +30,26 @@ import Console from '../components/Console.vue';
 			display: none;
 		}
 	</style>
+	<!-- Code for console. Loads itself everywhere where Console.vue is imported. Only likes being here in this file for some reason -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js" type="text/javascript"></script>
-	<script>
-		jQuery(function ($) {
-			$("div.console").terminal(
-				{
-					help: function () {
-						this.echo("Available commands: help, clear, exit, page");
-					},
-					exit: function () {
-						this.echo("Bye!");
-						$("div.console").remove();
-					},
-					clear: function () {
-						this.clear();
-					},
-					page: function (subcommand) {
-						if (subcommand == "reload" || subcommand == "refresh") {
-							this.echo("Reloading page...");
-							window.location.reload();
-						} else if (subcommand == "back" || subcommand == "<-") {
-							this.echo("Going back...");
-							window.history.back();
-						} else if (subcommand == "forward" || subcommand == "->") {
-							this.echo("Going forward...");
-							window.history.forward();
-						} else if (subcommand == "list") {
-							this.echo("Available page subcommands:  \n reload, aliases: refresh \n back aliases: <- \n forward aliases: ->");
-						} else {
-							this.echo("Unknown subcommand: " + subcommand);
-						}
-					}
-				},
-				{
-					greetings: "Basic console. \n Use the white box to type commands. \n Type 'help' for a list of commands.",
-				}
-			);
-		});
-	</script>
-	<h1>Astro</h1>
+	<script is:inline src="/load_console.js"></script>
+	<!-- End of console code -->
+
+
+	<MainHeader />
+	<div id="description" style="font-family: monospace; text-align: center; font-size: 1.45em;">
+		<p>
+			You have found my site! I am Ecorous/Ember/Exo. I code, I do weird developer things, and I don't really
+			sleep.
+		</p>
+		<p>
+			You can find my GitHub profile <a style="text-decoration: underline;" href="https://github.com/ExoPlant"
+				target="_blank" rel="noopener noreferrer">here</a>, and my full bio <a
+				style="text-decoration: underline;" href="/bio" target="_blank" rel="noopener noreferrer">here</a>.
+		</p>
+	</div>
+
 	<!--<img src="/imgs/backgrounds/background.jpg" alt="Astro" />-->
 	<Console />
 </body>
