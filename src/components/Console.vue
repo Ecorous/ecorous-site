@@ -18,7 +18,7 @@ export default {
   background-color: black;
   border-radius: 4px;
   padding: 20px;
-  margin-top: 62.9vh;
+  margin-top: 66.7vh;
   margin-left: 0px;
 }
 </style>
